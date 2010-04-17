@@ -1,0 +1,7 @@
+git clone git@github.com:neerajkumar/zsh_and_vi.giDo git clone git@github.com:neerajkumar/zsh_and_vi.git
+
+TO CONFIGURE YOUR VIM TEXT EDITOR AND CONFIGURE FOR RUBY ON RAILS PROJECTS ALSO
+  copy my_vimrc and paste into your home directory (do $cd and the paste it) and change the name to .vimrc.
+  copy my_vim direcory to your home directory and change the name to .vim
+TO CONFIGURE YOUR ZSH TEXT EDITOR 
+  copy and paste the my_zshrc to your home directory and change the name to .zshrc
