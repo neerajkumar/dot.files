@@ -26,11 +26,12 @@ PR_NO_COLOUR="%{$terminfo[sgr0]%}"
 
 function precmd() {
     head_info=$(git symbolic-ref HEAD 2> /dev/null)
-    if [[ $head_info =~ '^refs*' ]]; then
-	branch_name=$head_info[(ws:/:)-1]
-	PROMPT='%2~ $PR_RED$ZSH_THEME_GIT_PROMPT_PREFIX$PR_NO_COLOUR$PR_GREEN$branch_name$PR_NO_COLOUR$PR_RED$ZSH_THEME_GIT_PROMPT_SUFFIX$PR_NO_COLOUR> '
+    match_data=`echo $head_info|egrep '^refs*'`
+    if [[ -n $match_data ]]; then
+      branch_name=$head_info[(ws:/:)-1]
+      PROMPT='%2~ $PR_RED$ZSH_THEME_GIT_PROMPT_PREFIX$PR_NO_COLOUR$PR_GREEN$branch_name$PR_NO_COLOUR$PR_RED$ZSH_THEME_GIT_PROMPT_SUFFIX$PR_NO_COLOUR> '
     else
-	PROMPT='%2~> '
+      PROMPT='%2~> '
     fi
 }
 
@@ -109,6 +110,7 @@ alias gcount='git shortlog -sn'
 alias gcp='git cherry-pick'
 alias grst='git reset --hard HEAD'
 alias gf="git fetch"
+alias sake="~/sake"
 alias s="sake"
 
 alias psr="ps axu|grep ruby"
@@ -116,15 +118,23 @@ alias ..2="cd ../.."
 alias ..3="cd ../../.."
 alias r="rake"
 alias screen="screen -h 5000"
-alias emacs="open -a Emacs.app"
+#alias emacs="open -a Emacs.app"
 alias em="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --no-wait"
 alias sl="cd ~/checkout/solaro/"
 alias sca="cd ~/checkout/securo_admin/"
 alias ls="ls -G"
+alias mysql="/home/ft/mysql/bin/mysql -usa -pgu@rdU8g --socket=/home/ft/mysql/data/mysql.sock"
+alias be="bundle exec"
+alias grep="grep --color=always"
+alias search_file="~/search_file"
+alias eclipse="/data1/eclipse_j2ee/eclipse &"
+alias se="/root/projects/socialiteengage"
+export MAGICK_HOME="$HOME/softwaretools/ImageMagick-6.7.1"
+export PATH="$MAGICK_HOME/bin:$PATH"
+LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$MAGICK_HOME/lib"
+export LD_LIBRARY_PATH
 export EDITOR="vim"
+export BK_USER=kpatchava
+export JAVA_HOME=/root/jdk1.6.0_20
 
-#export PATH=$HOME/bin:/opt/ruby-enterprise-1.8.7-2010.01/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/scala/bin:$HOME/android-sdk-mac/tools:$PATH
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/scala/bin:$HOME/android-sdk-mac/tools:$PATH
-
-if [[ -s /Users/hemant/.rvm/scripts/rvm ]] ; then source /Users/hemant/.rvm/scripts/rvm ; fi
-
+export PATH=$HOME/bin:$JAVA_HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/scala/bin:$HOME/android-sdk-mac/tools:$PATH

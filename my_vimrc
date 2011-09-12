@@ -26,6 +26,7 @@ set ruler  " Ruler on
 set nu  " Line numbers on
 set nowrap  " Line wrapping off
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
+  colorscheme new_diff
  "colorscheme vividchalk  " Uncomment this to set a default theme
  "colors desertEx
 
@@ -43,5 +44,5 @@ set smarttab
 set expandtab
 " gvim specific
 set mousehide  " Hide mouse after chars typed
-set mouse=a  " Mouse in all modes
+"set mouse=a  " Mouse in all modes
 
