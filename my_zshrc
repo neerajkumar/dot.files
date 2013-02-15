@@ -123,18 +123,31 @@ alias em="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --no-wait"
 alias sl="cd ~/checkout/solaro/"
 alias sca="cd ~/checkout/securo_admin/"
 alias ls="ls -G"
-alias mysql="/home/ft/mysql/bin/mysql -usa -pgu@rdU8g --socket=/home/ft/mysql/data/mysql.sock"
+alias ll="ls -al"
 alias be="bundle exec"
 alias grep="grep --color=always"
+alias gi="gem install --no-ri --no-rdoc"
 alias search_file="~/search_file"
 alias eclipse="/data1/eclipse_j2ee/eclipse &"
-alias se="/root/projects/socialiteengage"
+alias prc="cd $HOME/projects/prc2010"
+alias bsi="cd $HOME/projects/bhartiyashaadi"
 export MAGICK_HOME="$HOME/softwaretools/ImageMagick-6.7.1"
 export PATH="$MAGICK_HOME/bin:$PATH"
 LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$MAGICK_HOME/lib"
+#export DYLD_LIBRARY_PATH="/usr/local/Cellar/mysql/5.5.15/lib:$DYLD_LIBRARY_PATH"
 export LD_LIBRARY_PATH
 export EDITOR="vim"
 export BK_USER=kpatchava
-export JAVA_HOME=/root/jdk1.6.0_20
+export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+# Oracle specific
+export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_11_2"
+#export SQLPATH="/usr/local/oracle/instantclient_10_2"
+#export TNS_ADMIN="/usr/local/oracle/network/admin"
+#export NLS_LANG="AMERICAN_AMERICA.UTF8"
+export PATH=$PATH:$DYLD_LIBRARY_PATH
 
 export PATH=$HOME/bin:$JAVA_HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/scala/bin:$HOME/android-sdk-mac/tools:$PATH
+export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
