@@ -25,6 +25,7 @@
   st = status
   out = log origin..HEAD
   bra = branch -a
+  br = branch -a
   lg = "log --decorate --graph --oneline"
   fix = commit --amend -C HEAD
 
@@ -34,3 +35,6 @@
 
 [github]
         user = neerajkumar
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f

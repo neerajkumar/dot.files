@@ -131,6 +131,12 @@ alias search_file="~/search_file"
 alias eclipse="/data1/eclipse_j2ee/eclipse &"
 alias prc="cd $HOME/projects/prc2010"
 alias bsi="cd $HOME/projects/bhartiyashaadi"
+alias rvl="rvm list"
+alias gl="gem list | grep"
+alias gi="gem install --no-ri --no-rdoc"
+alias rws="wintersmith"
+alias sst="svn st"
+alias sd="svn diff"
 export MAGICK_HOME="$HOME/softwaretools/ImageMagick-6.7.1"
 export PATH="$MAGICK_HOME/bin:$PATH"
 LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$MAGICK_HOME/lib"
@@ -151,3 +157,4 @@ export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+source /Users/neerajkumar/.rvm/scripts/rvm
