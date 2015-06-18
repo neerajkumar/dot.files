@@ -100,7 +100,7 @@ alias gst='git status'
 alias gl='git pull'
 alias gup='git fetch && git rebase'
 alias gp='git push'
-alias gd='git diff | mate'
+alias gd='git diff'
 alias gdv='git diff -w "$@" | vim -R -'
 alias gc='git commit -v'
 alias gca='git commit -v -a'
@@ -110,6 +110,8 @@ alias gcount='git shortlog -sn'
 alias gcp='git cherry-pick'
 alias grst='git reset --hard HEAD'
 alias gf="git fetch"
+alias gs="git stash"
+alias gsa="git stash apply"
 alias sake="~/sake"
 alias s="sake"
 
@@ -134,9 +136,13 @@ alias bsi="cd $HOME/projects/bhartiyashaadi"
 alias rvl="rvm list"
 alias gl="gem list | grep"
 alias gi="gem install --no-ri --no-rdoc"
+alias gem install="gem install --no-ri --no-rdoc"
 alias rws="wintersmith"
 alias sst="svn st"
 alias sd="svn diff"
+alias mate="open -a TextMate"
+alias sz='ls -l | sort -n +3 | tail -10'
+
 export MAGICK_HOME="$HOME/softwaretools/ImageMagick-6.7.1"
 export PATH="$MAGICK_HOME/bin:$PATH"
 LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$MAGICK_HOME/lib"
@@ -152,7 +158,7 @@ export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_11_2"
 #export NLS_LANG="AMERICAN_AMERICA.UTF8"
 export PATH=$PATH:$DYLD_LIBRARY_PATH
 
-export PATH=$HOME/bin:$JAVA_HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/scala/bin:$HOME/android-sdk-mac/tools:$PATH
+export PATH=$HOME/bin:$JAVA_HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/scala/bin:$HOME/android-sdk-mac/tools:/Users/neerajkumar/Downloads/lpd-0.6.5/lib/log4j-1.2.8.jar:/Users/neerajkumar/Downloads/lpd-0.6.5/dist/lib:/opt/chefdk/bin:$PATH
 export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
