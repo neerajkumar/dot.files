@@ -146,6 +146,7 @@ alias gcc="/usr/bin/gcc"
 alias gco="g co -b"
 alias mate="open -a TextMate"
 alias sz='ls -l | sort -n +3 | tail -10'
+alias rake="noglob rake"
 
 export MAGICK_HOME="$HOME/softwaretools/ImageMagick-6.7.1"
 export PATH="$MAGICK_HOME/bin:$PATH"
