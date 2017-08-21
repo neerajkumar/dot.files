@@ -174,6 +174,6 @@ export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source /Users/neerajkumar/.rvm/scripts/rvm
+source /Users/$(whoami)/.rvm/scripts/rvm
 # export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init -)"
