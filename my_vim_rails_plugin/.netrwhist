@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/neerajkumar/.vim'
-let g:netrw_dirhist_2='/Users/neeraj/projects/article/lib/tasks'
-let g:netrw_dirhist_3='/Users/neeraj/projects/trunk/.svn'
-let g:netrw_dirhist_4='/Users/neeraj/projects/CLOP/.bundle'
-let g:netrw_dirhist_5='/Users/neeraj/projects/coachpacket/.bundle'
-let g:netrw_dirhist_6='/Users/neeraj/projects/address_book/.git/refs'
-let g:netrw_dirhist_7='/Users/neeraj/projects/address_book/.git/refs/heads'
-let g:netrw_dirhist_8='/Users/neerajkumar/.rvm'
-let g:netrw_dirhist_9='/Users/neerajkumar/projects/therentpayer.com/.bundle'
+let g:netrw_dirhist_cnt =0
