@@ -94,6 +94,10 @@ if [ -f ~/.ssh/known_hosts ]; then
 fi
 #end of completion related stuff
 
+sub() {
+  open $1 -a "Sublime Text"
+}
+
 # Aliases
 alias g='git'
 alias gst='git status'
@@ -158,6 +162,9 @@ alias ps="ps -ef | grep"
 alias gitk='/usr/local/Cellar/git/2.14.1/bin/gitk'
 alias hstart="/usr/local/Cellar/hadoop/2.7.3/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/2.7.3/sbin/start-yarn.sh"
 alias hstop="/usr/local/Cellar/hadoop/2.7.3/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.7.3/sbin/stop-dfs.sh"
+alias gu="gem uninstall"
+alias mongod='/usr/local/bin/mongod'
+alias mongo='/usr/local/bin/mongo'
 
 export MAGICK_HOME="$HOME/softwaretools/ImageMagick-6.7.1"
 export PATH="$MAGICK_HOME/bin:$PATH"
@@ -174,7 +181,7 @@ export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_11_2"
 #export NLS_LANG="AMERICAN_AMERICA.UTF8"
 export PATH=$PATH:$DYLD_LIBRARY_PATH
 
-export PATH=$HOME/bin:$JAVA_HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/Celler/mysql/bin:/opt/local/bin:/opt/scala/bin:/usr/bin:$HOME/android-sdk-mac/tools:/Users/neerajkumar/Downloads/lpd-0.6.5/lib/log4j-1.2.8.jar:/Users/neerajkumar/Downloads/lpd-0.6.5/dist/lib:/opt/chefdk/bin:$PATH
+export PATH=$HOME/bin:$JAVA_HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/Celler/mysql/bin:/opt/local/bin:/opt/scala/bin:/usr/bin:$HOME/android-sdk-mac/tools:/Users/neerajkumar/Downloads/lpd-0.6.5/lib/log4j-1.2.8.jar:/Users/neerajkumar/Downloads/lpd-0.6.5/dist/lib:/opt/chefdk/bin:/usr/sbin:$PATH
 export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
