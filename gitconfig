@@ -25,13 +25,9 @@
   st = status
   out = log origin..HEAD
   bra = branch -a
-  br = branch -a
+  br = branch 
   lg = "log --decorate --graph --oneline"
   fix = commit --amend -C HEAD
-
-[user]
-	name = Neeraj Kumar
-	email = neeraj.kumar@gmail.com
 
 [github]
         user = neerajkumar
@@ -58,3 +54,6 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[user]
+	name = Neeraj Kumar
+	email = neeraj.kumar@gmail.com

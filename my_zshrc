@@ -26,9 +26,14 @@ PR_NO_COLOUR="%{$terminfo[sgr0]%}"
 
 function precmd() {
     head_info=$(git symbolic-ref HEAD 2> /dev/null)
+    present_dir=$(pwd)
     match_data=`echo $head_info|egrep '^refs*'`
     if [[ -n $match_data ]]; then
-      branch_name=$head_info[(ws:/:)-1]
+      if [[ ($match_data == 'refs/heads/dev') || $present_dir[(ws:/:)-1] != 'super_samurai' ]]; then
+        branch_name=$head_info[(ws:/:)-1]
+      else
+        branch_name=$head_info[(ws:/:)-2]
+      fi
       PROMPT='%2~ $PR_RED$ZSH_THEME_GIT_PROMPT_PREFIX$PR_NO_COLOUR$PR_GREEN$branch_name$PR_NO_COLOUR$PR_RED$ZSH_THEME_GIT_PROMPT_SUFFIX$PR_NO_COLOUR> '
     else
       PROMPT='%2~> '
@@ -125,6 +130,7 @@ alias ..3="cd ../../.."
 alias r="rake"
 alias screen="screen -h 5000"
 #alias emacs="open -a Emacs.app"
+alias ghd="open -a 'Github Desktop'.app"
 alias em="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --no-wait"
 alias sl="cd ~/checkout/solaro/"
 alias sca="cd ~/checkout/securo_admin/"
@@ -138,8 +144,6 @@ alias grep="grep --color=always"
 alias gi="gem install --no-ri --no-rdoc"
 alias search_file="~/search_file"
 alias imgcat="~/imgcat"
-alias eclipse="/data1/eclipse_j2ee/eclipse &"
-alias prc="cd $HOME/projects/prc2010"
 alias bsi="cd $HOME/projects/bhartiyashaadi"
 alias rvl="rvm list"
 alias gl="gem list | grep"
@@ -154,17 +158,21 @@ alias gcc="/usr/bin/gcc"
 alias gco="g co -b"
 alias gc="git checkout"
 alias mate="open -a TextMate"
+alias sublime="open -a 'Sublime Text'"
 alias sz='ls -l | sort -n +3 | tail -10'
 alias rake="noglob rake"
 alias rake="noglob rake"
 alias rs="be rails s"
+alias rc='be rails c'
 alias ps="ps -ef | grep"
-alias gitk='/usr/local/Cellar/git/2.14.1/bin/gitk'
+alias gitk='/usr/local/Cellar/git/2.21.0/bin/gitk'
 alias hstart="/usr/local/Cellar/hadoop/2.7.3/sbin/start-dfs.sh;/usr/local/Cellar/hadoop/2.7.3/sbin/start-yarn.sh"
 alias hstop="/usr/local/Cellar/hadoop/2.7.3/sbin/stop-yarn.sh;/usr/local/Cellar/hadoop/2.7.3/sbin/stop-dfs.sh"
+alias yarn='/usr/local/Cellar/yarn/1.12.3/bin/yarn'
 alias gu="gem uninstall"
 alias mongod='/usr/local/bin/mongod'
 alias mongo='/usr/local/bin/mongo'
+alias nodemon='~/Projects/graphql-playlist/server/node_modules/.bin/nodemon'
 
 export MAGICK_HOME="$HOME/softwaretools/ImageMagick-6.7.1"
 export PATH="$MAGICK_HOME/bin:$PATH"
@@ -172,7 +180,6 @@ LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$MAGICK_HOME/lib"
 #export DYLD_LIBRARY_PATH="/usr/local/Cellar/mysql/5.5.15/lib:$DYLD_LIBRARY_PATH"
 export LD_LIBRARY_PATH
 export EDITOR="vim"
-export BK_USER=kpatchava
 export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
 # Oracle specific
 export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_11_2"
@@ -183,9 +190,20 @@ export PATH=$PATH:$DYLD_LIBRARY_PATH
 
 export PATH=$HOME/bin:$JAVA_HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/Celler/mysql/bin:/opt/local/bin:/opt/scala/bin:/usr/bin:$HOME/android-sdk-mac/tools:/Users/neerajkumar/Downloads/lpd-0.6.5/lib/log4j-1.2.8.jar:/Users/neerajkumar/Downloads/lpd-0.6.5/dist/lib:/opt/chefdk/bin:/usr/sbin:$PATH
 export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source /Users/$(whoami)/.rvm/scripts/rvm
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# source /Users/$(whoami)/.rvm/scripts/rvm
 # export PATH="$HOME/.jenv/bin:$PATH"
 # eval "$(jenv init -)"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PATH="/usr/local/Cellar/node@8/8.12.0/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export LDFLAGS="-L/usr/local/opt/icu4c/lib"
+export CPPFLAGS="-I/usr/local/opt/icu4c/include"
