@@ -29,14 +29,14 @@ function precmd() {
     present_dir=$(pwd)
     match_data=`echo $head_info|egrep '^refs*'`
     if [[ -n $match_data ]]; then
-      if [[ ($match_data == 'refs/heads/dev') || $present_dir[(ws:/:)-1] != 'super_samurai' ]]; then
-        branch_name=$head_info[(ws:/:)-1]
-      else
-        branch_name=$head_info[(ws:/:)-2]
-      fi
-      PROMPT='%2~ $PR_RED$ZSH_THEME_GIT_PROMPT_PREFIX$PR_NO_COLOUR$PR_GREEN$branch_name$PR_NO_COLOUR$PR_RED$ZSH_THEME_GIT_PROMPT_SUFFIX$PR_NO_COLOUR> '
+	if [[ ($match_data == 'refs/heads/dev') || $present_dir[(ws:/:)-2] != 'Enjoy' ]]; then
+            branch_name=$head_info[(ws:/:)-1]
+	else
+            branch_name=$head_info[(ws:/:)-2]
+	fi
+	PROMPT='%2~ $PR_RED$ZSH_THEME_GIT_PROMPT_PREFIX$PR_NO_COLOUR$PR_GREEN$branch_name$PR_NO_COLOUR$PR_RED$ZSH_THEME_GIT_PROMPT_SUFFIX$PR_NO_COLOUR> '
     else
-      PROMPT='%2~> '
+	PROMPT='%2~> '
     fi
 }
 
@@ -189,7 +189,7 @@ export DYLD_LIBRARY_PATH="/usr/local/oracle/instantclient_11_2"
 export PATH=$PATH:$DYLD_LIBRARY_PATH
 
 export PATH=$HOME/bin:$JAVA_HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/Celler/mysql/bin:/opt/local/bin:/opt/scala/bin:/usr/bin:$HOME/android-sdk-mac/tools:/Users/neerajkumar/Downloads/lpd-0.6.5/lib/log4j-1.2.8.jar:/Users/neerajkumar/Downloads/lpd-0.6.5/dist/lib:/opt/chefdk/bin:/usr/sbin:$PATH
-export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
+# export PKG_CONFIG_PATH="/opt/local/lib/pkgconfig:$PKG_CONFIG_PATH"
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
 # PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -202,8 +202,10 @@ export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH="/usr/local/Cellar/node@8/8.12.0/bin:$PATH"
+export PATH="/usr/local/Cellar/node@8/8.12.0/bin:/usr/local/Cellar/carthage/0.33.0/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export LDFLAGS="-L/usr/local/opt/icu4c/lib"
 export CPPFLAGS="-I/usr/local/opt/icu4c/include"
+export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
+export NPM_TOKEN="fa87c7e2-a20f-4e4e-ab50-1d8b896de9a8"
