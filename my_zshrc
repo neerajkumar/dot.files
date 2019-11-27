@@ -208,4 +208,4 @@ export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export LDFLAGS="-L/usr/local/opt/icu4c/lib"
 export CPPFLAGS="-I/usr/local/opt/icu4c/include"
 export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
-export NPM_TOKEN="fa87c7e2-a20f-4e4e-ab50-1d8b896de9a8"
+
