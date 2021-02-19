@@ -9,7 +9,7 @@ begin
 rescue LoadError
 end
 
-require "grit"
+require 'rugged'
 
 class Object
   def blank?
@@ -124,7 +124,7 @@ end
 
 desc "Creating local branch for all branches"
 task :create_branch do
-  repo = Grit::Repo.new(".")
+  repo = Rugged::Repository.new('.')
   local_branches = repo.branches.collect { |x| x.name }
   puts local_branches.join(",")
   remote_origin_branches = repo.remotes.collect { |x| x.name =~ /^origin\/(.+)/ ? $1 : nil }.compact
